@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>对Vue.use的一点理解</title>
+    <url>/2020/03/29/%E5%AF%B9Vue-use%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>一直使用各种Vue相关的各种组件库，如Vant UI，Element UI等。无脑<code>Vue.use</code>然后对照文档CV似乎就能满足我的业务要求，自己封装一些全局组件的时候却是用的<code>Vue.component(&#39;tagName&#39;,componentObj)</code> 的方法。他们之间的区别在哪？<code>Vue.use</code>的过程发现了什么，如何开发自己的Vue插件？先开个坑，有空好好写一下。</p>
+<a id="more"></a>]]></content>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>only for test</title>
     <url>/2020/03/28/only-for-test/</url>
     <content><![CDATA[]]></content>
@@ -9,22 +18,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/03/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    <title>手写Vue核心模块（一）</title>
+    <url>/2020/03/28/%E6%89%8B%E5%86%99Vue%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p>写本系列博文的目的是为了记录自己学习Vue核心模块源码过程中的感悟，供以后复习。</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="MVVM框架介绍"><a href="#MVVM框架介绍" class="headerlink" title="MVVM框架介绍"></a>MVVM框架介绍</h3><p>M–Model层，数据模型层</p>
+<p>V–View层，视图层</p>
+<p>VM–ViewModel，视图模型层，V与M连接的桥梁</p>
+<p>MVVM实现了数据的响应式及视图层和模型层的解耦</p>
+<h3 id="几种实现双向数据绑定的方式"><a href="#几种实现双向数据绑定的方式" class="headerlink" title="几种实现双向数据绑定的方式"></a>几种实现双向数据绑定的方式</h3><p>发布-订阅者模式（backbone.js）</p>
+<p>– 一般通过pub，sub的方式来实现数据和视图的绑定，但是使用起来比较麻烦</p>
+<p>脏值检查（angular.js）</p>
+<p>– 通过脏值检测的方式来对比数据是否有变更，来决定是否更新视图，资料：AngularJS remembers the value and compares it to a previous value. This is basic dirty-checking. If there is a change in value, then it fires the change event. 脏检查，将原对象复制一份快照，在某个时间，比较现在对象与快照的值，如果不一样就表明发生了变化，这个策略要保留两份变量，而且要遍历对象，比较每个属性，这样会有一定的性能问题。</p>
+<p>数据劫持</p>
+<p>– 也就是Vue的实现方法，数据劫持结合订阅者-发布者模式。就是此系列博文要讨论的方法</p>
 ]]></content>
   </entry>
 </search>

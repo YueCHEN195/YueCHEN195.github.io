@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-28T11:25:33.337Z</updated>
+  <updated>2020-03-29T13:56:04.369Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>对Vue.use的一点理解</title>
+    <link href="http://yoursite.com/2020/03/29/%E5%AF%B9Vue-use%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/"/>
+    <id>http://yoursite.com/2020/03/29/%E5%AF%B9Vue-use%E7%9A%84%E4%B8%80%E7%82%B9%E7%90%86%E8%A7%A3/</id>
+    <published>2020-03-29T13:46:51.000Z</published>
+    <updated>2020-03-29T13:56:04.369Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一直使用各种Vue相关的各种组件库，如Vant UI，Element UI等。无脑&lt;code&gt;Vue.use&lt;/code&gt;然后对照文档CV似乎就能满足我的业务要求，自己封装一些全局组件的时候却是用的&lt;code&gt;Vue.component(&amp;#39;tagName&amp;#39;,componentObj)&lt;/code&gt; 的方法。他们之间的区别在哪？&lt;code&gt;Vue.use&lt;/code&gt;的过程发现了什么，如何开发自己的Vue插件？先开个坑，有空好好写一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>only for test</title>
@@ -34,15 +53,15 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/03/28/hello-world/"/>
-    <id>http://yoursite.com/2020/03/28/hello-world/</id>
+    <title>手写Vue核心模块（一）</title>
+    <link href="http://yoursite.com/2020/03/28/%E6%89%8B%E5%86%99Vue%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/28/%E6%89%8B%E5%86%99Vue%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/</id>
     <published>2020-03-28T11:11:46.386Z</published>
-    <updated>2020-03-29T07:55:29.690Z</updated>
+    <updated>2020-03-29T13:56:31.863Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;写本系列博文的目的是为了记录自己学习Vue核心模块源码过程中的感悟，供以后复习。&lt;/p&gt;
     
     </summary>
     
